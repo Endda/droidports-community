@@ -1,0 +1,80 @@
+name: Device Compatibility Report
+description: Report how a port listed on DroidPorts.com runs on your device.
+title: "[Compatibility Report]: "
+labels: ["compatibility-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing! Please **do not** attach or link game files, ROMs, disc images, or APK mirrors — reports containing them will be removed.
+  - type: input
+    id: game
+    attributes:
+      label: Game / Port
+      description: As listed on DroidPorts.com.
+      placeholder: e.g. Super Mario 64 (sm64-port)
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: DroidPorts page URL
+      placeholder: https://droidports.com/games/super-mario-64/
+  - type: input
+    id: device
+    attributes:
+      label: Device model
+      placeholder: e.g. Retroid Pocket 5, Galaxy S24 Ultra
+    validations:
+      required: true
+  - type: input
+    id: soc
+    attributes:
+      label: Chipset / SoC
+      placeholder: e.g. Snapdragon 8 Gen 2, Dimensity 9000
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+      placeholder: e.g. Android 14
+    validations:
+      required: true
+  - type: input
+    id: driver
+    attributes:
+      label: GPU driver used
+      placeholder: e.g. System driver / Mesa Turnip 24.3.0
+  - type: input
+    id: port_version
+    attributes:
+      label: Port version / build
+      placeholder: e.g. v1.2.0 release, or commit hash
+  - type: dropdown
+    id: playability
+    attributes:
+      label: Overall playability
+      options:
+        - Perfect — no noticeable issues
+        - Playable — minor glitches
+        - Playable — major issues
+        - Boots but not playable
+        - Does not launch
+    validations:
+      required: true
+  - type: input
+    id: performance
+    attributes:
+      label: Framerate & stability
+      placeholder: e.g. Locked 60 FPS, occasional stutter in large areas
+  - type: input
+    id: controller
+    attributes:
+      label: Controller tested
+      placeholder: e.g. Touch overlay, 8BitDo Ultimate, DualSense
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / glitches
+      description: Settings used, workarounds, screenshots of issues (no copyrighted assets).
