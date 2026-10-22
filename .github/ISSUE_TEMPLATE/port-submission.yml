@@ -1,0 +1,82 @@
+name: Port Submission
+description: Suggest a native Android port that isn't listed on DroidPorts.com yet.
+title: "[Port Submission]: "
+labels: ["port-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        DroidPorts only indexes **native** Android ports (not emulation or Winlator/Box64 containers) and only links to public source repositories or official stores.
+        Submissions that link to ROMs, disc images, cracked binaries, or unofficial APK mirrors will be closed.
+  - type: input
+    id: game
+    attributes:
+      label: Game title
+      placeholder: e.g. Perfect Dark
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Original platform & release year
+      placeholder: e.g. Nintendo 64, 2000
+    validations:
+      required: true
+  - type: dropdown
+    id: port_type
+    attributes:
+      label: Port type
+      options:
+        - Decompilation
+        - Static recompilation
+        - Source port
+        - Engine recreation
+        - Fangame
+        - Official commercial port
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Playability status
+      options:
+        - Verified playable (full game)
+        - Playable with issues
+        - Active alpha / beta
+        - In development
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Source repository URL
+      description: GitHub, GitLab, Codeberg, etc. Required unless this is an official commercial release.
+      placeholder: https://github.com/developer/project-android
+  - type: input
+    id: release
+    attributes:
+      label: Official release / store URL
+      placeholder: https://github.com/developer/project-android/releases or a Play Store link
+  - type: dropdown
+    id: assets
+    attributes:
+      label: Game data required
+      options:
+        - None — freeware / standalone
+        - User-supplied retail game data (console)
+        - User-supplied PC game files (Steam / GOG / retail)
+        - Commercial purchase (store)
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Description & hardware notes
+      description: Performance, recommended SoC, Turnip driver advice, controls, etc.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: My links point only to source code or official stores — not to game files, ROMs, or unofficial APK mirrors.
+          required: true
