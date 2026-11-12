@@ -1,4 +1,4 @@
-# DroidPorts Community
+https://github.com/Endda/droidports-community.git# DroidPorts Community
 
 Public issue tracker for [DroidPorts.com](https://droidports.com) — the directory of video games running natively on Android.
 
